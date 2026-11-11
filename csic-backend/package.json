@@ -1,0 +1,17 @@
+{
+  "name": "csic-backend",
+  "private": true,
+  "workspaces": [
+    "csic_frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=csic_frontend",
+    "dev": "npm run dev --workspace=csic_frontend",
+    "vercel-build": "npm run build --workspace=csic_frontend"
+  },
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  }
+}
