@@ -1,0 +1,5 @@
+operation-room/backend/data/audit_log.jsonl -diff
+operation-room/backend/data/vectordb/** -diff -text
+operation-room/backend/**/*.pdf -diff
+operation-room/backend/**/*.bin -diff -text
+operation-room/backend/data/cases/**/exports/** -diff

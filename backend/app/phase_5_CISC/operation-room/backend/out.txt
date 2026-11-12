@@ -1,0 +1,25 @@
+2026-04-10 21:58:51,379 [INFO] Starting Phase 1: Creating metadata & findings in Evidence Vault...
+2026-04-10 21:58:51,379 [INFO] Starting Phase 2: Resolving Layout Formats via Template Engine...
+2026-04-10 21:58:51,379 [INFO] [TemplateEngine] Assembled 17 sections for template 'technical' (case_type=data_exfiltration)
+2026-04-10 21:58:51,379 [INFO] Manifest Generated: 17 sections derived.
+2026-04-10 21:58:51,379 [INFO] Starting Phase 3 & 4: Spinning up State Machine Workers & Evidence Binder...
+Traceback (most recent call last):
+  File "C:\CISC\operation-room\backend\_integration_test.py", line 222, in <module>
+    asyncio.run(execute_integration_flow())
+  File "C:\Users\SANJAY S\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\SANJAY S\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SANJAY S\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\CISC\operation-room\backend\_integration_test.py", line 187, in execute_integration_flow
+    updated_manifest = await machine.execute_all(context, auto_approve=True)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\CISC\operation-room\backend\app\services\section_state_machine.py", line 203, in execute_all
+    self.manifest.transition_to(ReportStatus.SECTION_GENERATION)
+  File "C:\CISC\operation-room\backend\app\services\canonical_contracts.py", line 295, in transition_to
+    raise ValueError(
+ValueError: Invalid state transition: DRAFT \u2192 SECTION_GENERATION. Allowed: ['TEMPLATE_SELECTED', 'CANCELLED']

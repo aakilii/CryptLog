@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python .github/hooks/scripts/hook_guard.py",
+        "timeout": 10
+      }
+    ],
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "python .github/hooks/scripts/hook_guard.py",
+        "timeout": 10
+      }
+    ]
+  }
+}

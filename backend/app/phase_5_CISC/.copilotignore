@@ -1,0 +1,8 @@
+operation-room/backend/data/vectordb/**
+operation-room/backend/data/cases/**/exports/**
+operation-room/backend/data/audit_log.jsonl
+operation-room/backend/**/*.pdf
+operation-room/backend/**/*.bin
+operation-room/frontend/node_modules/**
+operation-room/frontend/.next/**
+tools/neo4j/**

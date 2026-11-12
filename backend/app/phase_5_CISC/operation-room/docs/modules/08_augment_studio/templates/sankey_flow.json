@@ -1,0 +1,39 @@
+{
+  "chart_type": "sankey",
+  "title": "Network Exfiltration Flow",
+  "description": "Visualize lateral movement and external data transfer (Sankey Diagram)",
+  "sql": "SELECT source_ip, dest_ip, sum(bytes) as flow_bytes FROM unified_timeline WHERE action='NETWORK_FLOW' GROUP BY source_ip, dest_ip HAVING flow_bytes > 1000",
+  "vega_spec": {
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "Sankey diagram visualizing network flows between IP addresses.",
+    "width": 600,
+    "height": 400,
+    "data": [
+      {
+        "name": "rawData"
+      },
+      {
+        "name": "nodes",
+        "source": "rawData",
+        "transform": [
+          {
+            "type": "formula",
+            "expr": "datum.source_ip",
+            "as": "st"
+          },
+          {
+            "type": "formula",
+            "expr": "datum.dest_ip",
+            "as": "tt"
+          }
+        ]
+      }
+    ],
+    "marks": [
+      {
+         "type": "rect",
+         "description": "Visual placeholder for sankey links given raw nodes."
+      }
+    ]
+  }
+}
