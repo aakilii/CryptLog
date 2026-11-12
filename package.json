@@ -1,13 +1,13 @@
 {
-  "name": "csic-backend",
+  "name": "cryptlog",
   "private": true,
   "workspaces": [
-    "csic_frontend"
+    "frontend"
   ],
   "scripts": {
-    "build": "npm run build --workspace=csic_frontend",
-    "dev": "npm run dev --workspace=csic_frontend",
-    "vercel-build": "npm run build --workspace=csic_frontend"
+    "build": "npm run build --workspace=frontend",
+    "dev": "npm run dev --workspace=frontend",
+    "vercel-build": "npm run build --workspace=frontend"
   },
   "dependencies": {
     "next": "16.1.6",

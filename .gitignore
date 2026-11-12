@@ -7,14 +7,17 @@ __pycache__/
 *.db-wal
 *.db-journal
 data/
+.DS_Store
+Thumbs.db
+backend/FULL_REPORT_*.pdf
 
-# Frontend (Next.js) — single repo; ignore build + deps under csic_frontend/
-csic_frontend/node_modules/
-csic_frontend/.next/
-csic_frontend/out/
-csic_frontend/.vercel/
-csic_frontend/.turbo/
-csic_frontend/.env.local
-csic_frontend/.env*.local
-csic_frontend/*.tsbuildinfo
-csic_frontend/vendor/
+# Frontend (Next.js) — single repo; ignore build + deps under frontend/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/.turbo/
+frontend/.env.local
+frontend/.env*.local
+frontend/*.tsbuildinfo
+frontend/vendor/
