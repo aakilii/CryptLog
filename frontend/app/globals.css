@@ -1,0 +1,135 @@
+@import 'tailwindcss';
+
+@source "../components/**/*.{js,ts,jsx,tsx}";
+@source "../hooks/**/*.{js,ts,jsx,tsx}";
+@source "../lib/**/*.{js,ts,jsx,tsx}";
+@source "./**/*.{js,ts,jsx,tsx}";
+
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: hsl(220, 33%, 98%);
+  --foreground: hsl(222.2, 47.4%, 11.2%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 47.4%, 11.2%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222.2, 47.4%, 11.2%);
+  --primary: hsl(221.2, 83.2%, 53.3%); 
+  --primary-foreground: hsl(210, 40%, 98%);
+  
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(222.2, 47.4%, 11.2%);
+  --sidebar-primary: hsl(221.2, 83.2%, 53.3%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(210, 40%, 96.1%);
+  --sidebar-accent-foreground: hsl(222.2, 47.4%, 11.2%);
+  --sidebar-border: hsl(214.3, 31.8%, 91.4%);
+  --sidebar-ring: hsl(221.2, 83.2%, 53.3%);
+
+  --secondary: hsl(210, 40%, 96.1%);
+  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+  --muted: hsl(210, 40%, 96.1%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --accent: hsl(210, 40%, 96.1%);
+  --accent-foreground: hsl(222.2, 47.4%, 11.2%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --success: hsl(152, 69%, 31%);
+  --success-foreground: hsl(210, 40%, 98%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --ring: hsl(221.2, 83.2%, 53.3%);
+  
+  --chart-1: hsl(221.2, 83.2%, 53.3%);
+  --chart-2: hsl(152, 69%, 31%);
+  --chart-3: hsl(30, 80%, 55%);
+  --chart-4: hsl(280, 65%, 60%);
+  --chart-5: hsl(340, 75%, 55%);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --shadow-soft-blue: 0 10px 30px -5px rgba(50, 90, 150, 0.08);
+}
+
+@layer base {
+  body {
+    background:
+      radial-gradient(circle at 12% 12%, rgba(6, 182, 212, 0.08) 0, transparent 34%),
+      radial-gradient(circle at 86% 10%, rgba(139, 92, 246, 0.08) 0, transparent 38%),
+      linear-gradient(180deg, #eff4fb 0%, #f8fafc 44%, #eef2ff 100%);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(100, 116, 139, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100, 116, 139, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    z-index: 0;
+  }
+}
+
+@layer components {
+  .card, [data-slot="card"] {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid rgba(219, 234, 254, 0.5);
+    box-shadow: 0 10px 30px -5px rgba(50, 90, 150, 0.08);
+    border-radius: 1rem;
+    transition: all 300ms ease;
+    backdrop-filter: blur(8px);
+  }
+  
+  .card:hover, [data-slot="card"]:hover {
+    box-shadow: 0 20px 40px -8px rgba(50, 90, 150, 0.12);
+    transform: translateY(-2px);
+    border-color: rgba(191, 219, 254, 0.8);
+  }
+}
+
+/* Operational Room Active Tab Highlight for Sidebar */
+[data-sidebar="menu-button"][data-active="true"] {
+  background-color: rgba(59, 130, 246, 0.1) !important; /* Soft light blue */
+  color: hsl(var(--primary)) !important;               /* Deep blue text */
+  font-weight: 600 !important;
+  border-radius: 0.5rem !important;                     /* Rounded corners */
+  border-left: none !important;
+}
+[data-sidebar="menu-button"][data-active="true"] svg {
+  color: hsl(var(--primary)) !important;
+}
