@@ -1,0 +1,88 @@
+{
+  "playbooks": [
+    {
+      "id": "ransomware_playbook",
+      "title": "Playbook A: Ransomware Blast Radius",
+      "description": "Reconstruct the exact encryption window, patient zero anomaly, and affected scope.",
+      "requires": ["Windows_Event_Log", "CRUD_Log"],
+      "layout": [
+        {
+          "type": "text",
+          "content": "# Ransomware Blast Radius Execution Report",
+          "x": 50,
+          "y": 50,
+          "width": 600,
+          "height": 100
+        },
+        {
+          "type": "chart",
+          "label": "Files Encrypted per Minute",
+          "x": 50,
+          "y": 180,
+          "width": 700,
+          "height": 300,
+          "placeholderText": "Drag the 'Ransomware Burst' Snapshot here from the Evidence Binder"
+        },
+        {
+          "type": "correlation",
+          "label": "Infection Ancestry (Patient Zero)",
+          "x": 50,
+          "y": 500,
+          "width": 700,
+          "height": 400,
+          "placeholderText": "Drag the 'Infected Process Lineage' Snapshot here from the Correlation panel"
+        }
+      ]
+    },
+    {
+      "id": "insider_transfer_playbook",
+      "title": "Playbook B: Insider Network Exfiltration",
+      "description": "Trace outbound transfers and proxy gateways connected to internal host anomalies.",
+      "requires": ["Network_Netflow", "Proxy_Log", "Active_Directory"],
+      "layout": [
+        {
+          "type": "text",
+          "content": "# Insider Transfer & Exfiltration Report",
+          "x": 50,
+          "y": 50,
+          "width": 600,
+          "height": 100
+        },
+        {
+          "type": "network",
+          "label": "Transfer Chain & Routing Paths",
+          "x": 50,
+          "y": 180,
+          "width": 700,
+          "height": 300,
+          "placeholderText": "Drag the 'Top Talkers' Snapshot here from the Network Analyst panel"
+        }
+      ]
+    },
+    {
+      "id": "bec_playbook",
+      "title": "Playbook C: Business Email Compromise",
+      "description": "Trace phishing vectors through proxies into inbox, modeling network hops with Sankey.",
+      "requires": ["Network_Netflow", "O365_Logs"],
+      "layout": [
+        {
+          "type": "text",
+          "content": "# BEC Phishing Hopping\n<br><span data-claim=\"true\" data-status=\"draft\" data-text=\"Phishing Vector\">Phishing Vector</span><br><br><span data-claim=\"true\" data-status=\"draft\" data-text=\"Credentials Compromised\">Credentials Compromised</span>",
+          "x": 50,
+          "y": 50,
+          "width": 600,
+          "height": 100
+        },
+        {
+          "type": "sankey",
+          "label": "Proxy Flow & Delivery",
+          "x": 50,
+          "y": 200,
+          "width": 700,
+          "height": 400,
+          "placeholderText": "Drag Network Exfiltration Flow Snapshot here"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+// Module panels for Report Studio V4
+export { TimelinePanel } from './TimelinePanel'
+export { AnomalyPanel } from './AnomalyPanel'
+export { CorrelationPanel } from './CorrelationPanel'
+export { NetworkPanel } from './NetworkPanel'
+export { CRUDPanel } from './CRUDPanel'
+export { DepthPanel } from './DepthPanel'
+export { VaultPanel } from './VaultPanel'
+export { TextPanel } from './TextPanel'
+export { ElementsPanel } from './ElementsPanel'
+export { UploadsPanel } from './UploadsPanel'
+export { TemplatesPanel } from './TemplatesPanel'

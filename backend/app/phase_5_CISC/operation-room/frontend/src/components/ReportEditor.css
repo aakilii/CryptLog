@@ -1,0 +1,173 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Report Studio v2 — TipTap Editor Styles
+   Government-standard NFLIP design system
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Editor Content Area ────────────────────────────────────────── */
+.studio-editor-content {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #1e293b;
+  outline: none;
+  min-height: 500px;
+}
+
+.studio-editor-content > *:first-child { margin-top: 0; }
+
+/* ── Headings ───────────────────────────────────────────────────── */
+.studio-editor-content h1 {
+  font-size: 28px; font-weight: 800; color: #0f172a;
+  letter-spacing: -0.03em; margin: 32px 0 12px; line-height: 1.3;
+  border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;
+}
+.studio-editor-content h2 {
+  font-size: 22px; font-weight: 700; color: #1e293b;
+  letter-spacing: -0.02em; margin: 28px 0 10px; line-height: 1.35;
+  border-bottom: 1px solid #f1f5f9; padding-bottom: 6px;
+}
+.studio-editor-content h3 {
+  font-size: 18px; font-weight: 700; color: #334155;
+  margin: 24px 0 8px; line-height: 1.4;
+}
+.studio-editor-content h4 {
+  font-size: 15px; font-weight: 700; color: #475569;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  margin: 20px 0 8px;
+}
+
+/* ── Paragraphs & Text ──────────────────────────────────────────── */
+.studio-editor-content p {
+  margin: 0 0 12px; color: #334155;
+}
+
+.studio-editor-content strong { font-weight: 700; color: #0f172a; }
+.studio-editor-content em { font-style: italic; }
+.studio-editor-content u { text-decoration: underline; text-underline-offset: 2px; }
+.studio-editor-content s { text-decoration: line-through; color: #94a3b8; }
+
+.studio-editor-content mark {
+  background: rgba(251,191,36,0.25); padding: 1px 4px; border-radius: 3px;
+}
+
+.studio-editor-content code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px; background: #f1f5f9; color: #dc2626;
+  padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;
+}
+
+/* ── Lists ──────────────────────────────────────────────────────── */
+.studio-editor-content ul,
+.studio-editor-content ol {
+  padding-left: 24px; margin: 8px 0 16px;
+}
+
+.studio-editor-content ul { list-style-type: disc; }
+.studio-editor-content ol { list-style-type: decimal; }
+
+.studio-editor-content li {
+  margin: 4px 0; color: #334155;
+}
+.studio-editor-content li p { margin: 0; }
+
+/* ── Blockquote ─────────────────────────────────────────────────── */
+.studio-editor-content blockquote {
+  border-left: 3px solid #2563eb;
+  padding: 12px 20px; margin: 16px 0;
+  background: rgba(37,99,235,0.03);
+  color: #475569; font-style: italic;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── Code Block ─────────────────────────────────────────────────── */
+.studio-editor-content pre {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px; line-height: 1.6;
+  background: #0f172a; color: #e2e8f0;
+  padding: 20px 24px; margin: 16px 0;
+  border-radius: 8px; overflow-x: auto;
+  border: 1px solid #1e293b;
+}
+.studio-editor-content pre code {
+  background: none; border: none; color: inherit;
+  padding: 0; font-size: inherit;
+}
+
+/* ── Horizontal Rule ────────────────────────────────────────────── */
+.studio-editor-content hr {
+  border: none; height: 1px;
+  background: #e2e8f0; margin: 24px 0;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────── */
+.studio-editor-content table {
+  width: 100%; border-collapse: collapse;
+  margin: 16px 0; border: 1px solid #e2e8f0;
+  border-radius: 8px; overflow: hidden;
+}
+
+.studio-editor-content th {
+  background: #f8fafc; font-weight: 700; font-size: 12px;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: #475569; padding: 10px 14px;
+  border: 1px solid #e2e8f0; text-align: left;
+}
+
+.studio-editor-content td {
+  padding: 10px 14px; border: 1px solid #e2e8f0;
+  color: #334155; font-size: 14px;
+  vertical-align: top;
+}
+
+.studio-editor-content tr:nth-child(even) td {
+  background: #fafbfc;
+}
+
+/* ── Table resize handles ──────────────────── */
+.tableWrapper { overflow-x: auto; margin: 16px 0; }
+
+.column-resize-handle {
+  position: absolute; right: -2px; top: 0;
+  bottom: 0; width: 4px;
+  background: #2563eb; cursor: col-resize;
+}
+
+.resize-cursor { cursor: col-resize; }
+
+.selectedCell::after {
+  content: ''; position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: rgba(37,99,235,0.06);
+  pointer-events: none; z-index: 2;
+}
+
+/* ── Images ─────────────────────────────────────────────────────── */
+.studio-editor-content img {
+  max-width: 100%; height: auto;
+  border-radius: 8px; margin: 12px 0;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ── Placeholder ────────────────────────────────────────────────── */
+.studio-editor-content p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left; color: #94a3b8;
+  pointer-events: none; height: 0;
+  font-style: italic;
+}
+
+/* ── Selection ──────────────────────────────────────────────────── */
+.studio-editor-content ::selection {
+  background: rgba(37,99,235,0.15);
+}
+
+/* ── Print-like page appearance ─────────────────────────────────── */
+@media print {
+  .studio-editor-content {
+    font-size: 12pt; line-height: 1.6;
+  }
+  .studio-editor-content h1 { font-size: 22pt; }
+  .studio-editor-content h2 { font-size: 16pt; }
+  .studio-editor-content pre { background: #f8f8f8; color: #333; border: 1px solid #ccc; }
+}
